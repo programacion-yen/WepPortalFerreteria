@@ -1,0 +1,22 @@
+﻿@page "/Productos"
+@using PortalFerreteria.Shared.Models.Nmodels;
+
+
+<PageTitle>Ubicación Disponible</PageTitle>
+<SurveyPrompt Title="Consulta Productos" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-12 col-md-12">
+            <form class="row g-4">
+               @* <div class="col-md-1"></div>*@
+                <div class="col-md-2">
+                    <SfComboBox DataSource="@listaOpciones" @bind-Value="@ComboValOpciones" >
+                        <ComboBoxEvents TValue="string" ValueChange="@onChangeComboOpciones" TItem="OpcionesNmodels"></ComboBoxEvents>
+                        <ComboBoxFieldSettings Value="NombreOpcion"></ComboBoxFieldSettings>
+                    </SfComboBox>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
